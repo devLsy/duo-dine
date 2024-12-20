@@ -4,6 +4,7 @@
 <mapper namespace="com.duo.duodine.dining.mapper.DiningMapper">
 
     <select id="selectRestaurantsList" parameterType="Restaurant" resultType="Restaurant">
+        SELECT * FROM restaurants
     </select>
 
 </mapper>
