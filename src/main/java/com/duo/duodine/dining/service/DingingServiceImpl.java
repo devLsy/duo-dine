@@ -21,4 +21,18 @@ public class DingingServiceImpl implements DiningService {
     public List<Restaurant> selectRestaurantsList() {
         return mapper.selectRestaurantsList();
     }
+
+    /**
+     * 맛집 등록
+     * @param restaurant
+     * @return
+     */
+    @Override
+    public String insertRestaurant(Restaurant restaurant) throws Exception{
+        String message = "";
+        int result = mapper.insertRestaurant(restaurant);
+        return message = result > 0 ? "success" : "fail";
+    }
+
+
 }

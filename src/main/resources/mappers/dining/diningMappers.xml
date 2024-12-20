@@ -3,8 +3,40 @@
 
 <mapper namespace="com.duo.duodine.dining.mapper.DiningMapper">
 
+    <!--맛집 리스트 조회-->
     <select id="selectRestaurantsList" parameterType="Restaurant" resultType="Restaurant">
         SELECT * FROM restaurants
     </select>
+
+    <!--맛집 등록-->
+    <insert id="insertRestaurant" parameterType="Restaurant">
+        INSERT INTO restaurants
+        (
+            name,              <!-- 맛집 이름 -->
+            address,           <!-- 맛집 주소 -->
+            latitude,          <!-- 위도 -->
+            longitude,         <!-- 경도 -->
+            phone,             <!-- 연락처 -->
+            category,          <!-- 음식 카테고리 -->
+            rating,            <!-- 평점 -->
+            visited,           <!-- 방문 여부 (1: 방문, 0: 미방문) -->
+            revisit,           <!-- 재방문 의사 (1: 재방문 의사 있음, 0: 없음) -->
+            created_at         <!-- 생성 시각 (자동 입력되는 시간) -->
+        )
+        VALUES
+        (
+           #{name},
+           #{address},
+           #{latitude},
+           #{longitude},
+           #{phone},
+           #{category},
+           #{rating},
+           #{visited},
+           #{revisit},
+           CURRENT_TIMESTAMP
+        )
+    </insert>
+
 
 </mapper>
