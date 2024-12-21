@@ -29,6 +29,6 @@ public class DiningController {
     public String selectRestaurantsList(Model model, Restaurant vo) throws Exception{
         List<Restaurant> list = service.selectRestaurantsList(vo);
         model.addAttribute("list", list);
-        return "/dining/list";
+        return "/pages/dining/list";
     }
 }

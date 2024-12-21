@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default_layout}">
+
+<div layout:fragment="content">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>맛집 이름</th>
+            <th>메인 주소</th>
+            <th>상세 주소</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="list : ${list}">
+            <td th:text="${list.name}"></td>
+            <td th:text="${list.mainAddress}"></td>
+            <td th:text="${list.detailAddress}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</html>
