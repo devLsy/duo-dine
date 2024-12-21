@@ -38,7 +38,6 @@ public class TransactionConfig {
         String transactionAttributesDefinition = attribute.toString();
 
         Properties txAttributes = new Properties();
-        txAttributes.setProperty("select*", transactionAttributesDefinition);
         txAttributes.setProperty("insert*", transactionAttributesDefinition);
         txAttributes.setProperty("update*", transactionAttributesDefinition);
         txAttributes.setProperty("delete*", transactionAttributesDefinition);
