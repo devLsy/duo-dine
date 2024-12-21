@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
+import static com.duo.duodine.common.utils.result.ResultUtils.getResultCode;
+
 @Service
 @RequiredArgsConstructor
 public class DingingServiceImpl implements DiningService {
@@ -50,30 +52,31 @@ public class DingingServiceImpl implements DiningService {
      */
     @Override
     public String insertRestaurant(Restaurant restaurant) throws Exception{
-        String message = "";
         int result = mapper.insertRestaurant(restaurant);
-        return message = result > 0 ? "success" : "fail";
+        return getResultCode(result);
     }
 
     /**
      * 맛집 수정
+     *
      * @param restaurant
      * @return
      */
     @Override
-    public int updateRestaurant(Restaurant restaurant) throws Exception{
-        return mapper.updateRestaurant(restaurant);
+    public String updateRestaurant(Restaurant restaurant) throws Exception{
+        int result = mapper.updateRestaurant(restaurant);
+        return getResultCode(result);
     }
 
     /**
      * 맛집 삭제
+     *
      * @param id
      * @return
      */
     @Override
-    public int deleteRestaurantById(Long id) throws Exception{
-        return mapper.deleteRestaurantById(id);
+    public String deleteRestaurantById(Long id) throws Exception{
+        int result = mapper.deleteRestaurantById(id);
+        return getResultCode(result);
     }
-
-
 }

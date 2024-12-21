@@ -16,7 +16,7 @@ public interface DiningService {
     // 맛집 등록
     String insertRestaurant(Restaurant vo) throws Exception;
     // 맛집 수정
-    int updateRestaurant(Restaurant vo) throws Exception;
+    String updateRestaurant(Restaurant vo) throws Exception;
     // 맛집 삭제
-    int deleteRestaurantById(Long id) throws Exception;
+    String deleteRestaurantById(Long id) throws Exception;
 }

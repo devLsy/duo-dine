@@ -27,8 +27,8 @@ public class DiningController {
      */
     @GetMapping(value = "")
     public String selectRestaurantsList(Model model, Restaurant vo) throws Exception{
-        List<Restaurant> restaurants = service.selectRestaurantsList(vo);
-        model.addAttribute("list", restaurants);
+        List<Restaurant> list = service.selectRestaurantsList(vo);
+        model.addAttribute("list", list);
         return "/dining/list";
     }
 }

@@ -25,22 +25,22 @@ class DingingServiceImplTest {
     @Disabled
     public void testInsert() throws Exception {
 
-            Restaurant vo = null;
+        Restaurant vo = null;
 
-            for (int i = 0; i <= 10000; i++) {
-                vo = new Restaurant();
-                vo.setName("식당 " + i);
-                vo.setMainAddress("메인" + i);
-                vo.setDetailAddress("상세" + i);
-                vo.setLatitude(BigDecimal.valueOf(37.560800));
-                vo.setLongitude(BigDecimal.valueOf(126.982000));
-                vo.setPhone("02-222-2222");
-                vo.setCategory("한식");
-                vo.setRating(BigDecimal.valueOf(4.5));
-                vo.setVisited(true);
-                vo.setRevisit(true);
-                service.insertRestaurant(vo);
-            }
+        for (int i = 0; i <= 10000; i++) {
+            vo = new Restaurant();
+            vo.setName("식당 " + i);
+            vo.setMainAddress("메인" + i);
+            vo.setDetailAddress("상세" + i);
+            vo.setLatitude(BigDecimal.valueOf(37.560800));
+            vo.setLongitude(BigDecimal.valueOf(126.982000));
+            vo.setPhone("02-222-2222");
+            vo.setCategory("한식");
+            vo.setRating(BigDecimal.valueOf(4.5));
+            vo.setVisited(true);
+            vo.setRevisit(true);
+            service.insertRestaurant(vo);
+        }
     }
 
     // 맛집 목록
@@ -68,7 +68,7 @@ class DingingServiceImplTest {
     @Disabled
     // 맛집 삭제
     public void testDeleteById() throws Exception {
-        int result = service.deleteRestaurantById(20L);
+        String result = service.deleteRestaurantById(20L);
         log.info("result => {}", result);
     }
 
@@ -80,7 +80,7 @@ class DingingServiceImplTest {
         Restaurant vo = new Restaurant();
         vo.setId(20L);
         vo.setMainAddress("메인19 수정");
-        int result = service.updateRestaurant(vo);
+        String result = service.updateRestaurant(vo);
         log.info("result => {}", result);
     }
 
