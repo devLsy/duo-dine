@@ -12,22 +12,27 @@
         </a>
 
         <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+<!--        <div class="sidebar-heading"></div>-->
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-table"></i>
-                <span>리스트</span>
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Pages</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-<!--                    <h6 class="collapse-header">리스트</h6>-->
-                    <a class="collapse-item" th:href="@{/dining}">리스트</a>
+<!--                    <h6 class="collapse-header">Login Screens:</h6>-->
+                    <a class="collapse-item" th:href="@{/dining}">맛집 리스트</a>
+                    <a class="collapse-item" th:href="@{/dining/reg}">맛집 등록</a>
                 </div>
             </div>
         </li>
+
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
     </ul>
     <!-- End of Sidebar -->
 </th:block>
