@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping(value = "/dining")
+@RequestMapping(value = "/")
 public class DiningController {
 
     private final DiningService service;
@@ -25,10 +25,15 @@ public class DiningController {
      * @return
      * @throws Exception
      */
-    @GetMapping(value = "")
+    @GetMapping(value = "/list")
     public String selectRestaurantsList(Model model, Restaurant vo) throws Exception{
         List<Restaurant> list = service.selectRestaurantsList(vo);
         model.addAttribute("list", list);
         return "/pages/dining/list";
+    }
+
+    @GetMapping("/reg")
+    public String regForm() {
+        return "/pages/dining/reg";
     }
 }

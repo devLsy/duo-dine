@@ -5,27 +5,11 @@
 <!-- head -->
 <th:block th:replace="~{fragments/config :: configFragment}"></th:block>
 
-<body>
-<!-- Page Wrapper -->
-<div id="wrapper">
-        <!-- sidebar fragment 사용 -->
-        <th:block th:replace="~{fragments/sidebar :: sidebarFragment}"></th:block>
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-        <!-- Main Content -->
-        <div id="content">
-            <!-- topbar -->
-            <th:block th:replace="~{fragments/header :: headerFragment}"></th:block>
-            <!-- content fragment 사용 -->
-            <th:block layout:fragment="content">
-            </th:block>
-            <!-- content script -->
-            <th:block layout:fragment="script"></th:block>
-        </div>
-    </div>
-</div>
-<!-- footer fragment 사용 -->
-<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+<body class="bg-gradient-primary">
+    <!-- content fragment 사용 -->
+    <th:block layout:fragment="content"></th:block>
+    <!-- content script -->
+    <th:block layout:fragment="script"></th:block>
 
 <!-- Bootstrap core JavaScript-->
 <script th:src="@{vendor/jquery/jquery.min.js}"></script>
