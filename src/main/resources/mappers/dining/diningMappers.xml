@@ -116,6 +116,7 @@
         </where>
     </select>
 
+<!--    insert duplicate(오라클의 머지와 비슷)으로 변경할 것-->
     <!--맛집 등록-->
     <insert id="insertRestaurant" parameterType="Restaurant">
         INSERT INTO restaurants

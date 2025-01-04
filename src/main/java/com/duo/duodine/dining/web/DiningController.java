@@ -32,6 +32,10 @@ public class DiningController {
         return "/pages/dining/list";
     }
 
+    /**
+     * 맛짐 등록 화면
+     * @return
+     */
     @GetMapping("/reg")
     public String regForm() {
         return "/pages/dining/reg";
